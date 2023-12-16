@@ -20,11 +20,14 @@
 
 
 <script>
+import auth from "../auth";
+
 export default {
   name: "AllPosts",
   data() {
     return {
       posts: [],
+      authResult: auth.authenticated()
     };
   },
   methods: {
@@ -34,6 +37,23 @@ export default {
         .then((data) => (this.posts = data))
         .catch((err) => console.log(err.message));
     },
+    Logout() {
+      fetch("http://localhost:3000/auth/logout", {
+          credentials: 'include', //  Don't forget to specify this if you need cookies
+      })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        console.log('jwt removed');
+        //console.log('jwt removed:' + auth.authenticated());
+        this.$router.push("/api/login");
+        //location.assign("/");
+      })
+      .catch((e) => {
+        console.log(e);
+        console.log("error logout");
+      });
+    }
   },
   mounted() {
     this.fetchPosts();

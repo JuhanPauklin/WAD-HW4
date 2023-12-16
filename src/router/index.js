@@ -7,12 +7,38 @@ import LogIn from "../views/LogIn.vue";
 
 
 
-const routes = [{
+const routes = [
+    
+    {
+    path: "/",
+    name: "AllPosts",
+    component: () =>
+    import ("../views/AllPosts.vue"),
+    beforeEnter: async(to, from, next) => {
+        let authResult = await auth.authenticated();
+        if (!authResult) {
+            next('/api/login')
+        } else {
+            next();
+        }
+    }
+    },
+    
+    {
         path: '/',
         name: 'AllPosts',
         component: () =>
-            import ("../views/AllPosts.vue")
+        import ("../views/AllPosts.vue"),
+        beforeEnter: async(to, from, next) => {
+            let authResult = await auth.authenticated();
+            if (!authResult) {
+                next('/api/login')
+            } else {
+                next();
+            }
+        }
     },
+    
     {
         path: "/api/allposts",
         name: "AllPosts",
