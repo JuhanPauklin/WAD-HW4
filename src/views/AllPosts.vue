@@ -14,6 +14,7 @@
         </div>
       </ul>
     </div>
+    <button   @click="DeleteAll" class="center">Delete All</button>
   </div>
 </template>
 
@@ -52,8 +53,25 @@ export default {
         console.log(e);
         console.log("error logout");
       });
-    }
+    },
+    DeleteAll() {
+      
+      fetch(`http://localhost:3000/api/posts/`, {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+      })
+      .then((response) => {
+        console.log(response.data);
+        this.$router.push("/api/allposts");
+        location.reload(); 
+
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+    },
   },
+
   mounted() {
     this.fetchPosts();
     console.log("mounted");
