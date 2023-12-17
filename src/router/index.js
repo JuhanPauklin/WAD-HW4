@@ -5,31 +5,18 @@ import AddPost from "../views/AddPost.vue";
 import SignUp from "../views/SignUp.vue";
 import LogIn from "../views/LogIn.vue";
 
-
+import auth from "../auth";
 
 const routes = [
+
     
     {
-    path: "/",
-    name: "AllPosts",
-    component: () =>
-    import ("../views/AllPosts.vue"),
-    beforeEnter: async(to, from, next) => {
-        let authResult = await auth.authenticated();
-        if (!authResult) {
-            next('/api/login')
-        } else {
-            next();
-        }
-    }
-    },
-    
-    {
-        path: '/',
+        path: '/api/allposts',
         name: 'AllPosts',
         component: () =>
         import ("../views/AllPosts.vue"),
         beforeEnter: async(to, from, next) => {
+            console.log("Allposts authenitcate")
             let authResult = await auth.authenticated();
             if (!authResult) {
                 next('/api/login')
@@ -37,12 +24,6 @@ const routes = [
                 next();
             }
         }
-    },
-    
-    {
-        path: "/api/allposts",
-        name: "AllPosts",
-        component: AllPosts,
     },
     {
         path: "/api/apost/:id",
@@ -53,6 +34,14 @@ const routes = [
         path: "/api/addpost",
         name: "AddPost",
         component: AddPost,
+        beforeEnter: async(to, from, next) => {
+            let authResult = await auth.authenticated();
+            if (!authResult) {
+                next('/api/login')
+            } else {
+                next();
+            }
+        }
     },
     {
         path: "/api/signup",
@@ -64,11 +53,23 @@ const routes = [
         name: "LogIn",
         component: LogIn,
     },
-    { //will route to AllPosts view if none of the previous routes apply
-        path: "/:catchAll(.*)",
-        name: "AllPosts",
-        component: AllPosts,
-    }
+
+    {
+        path: '/:catchAll(.*)',
+        name: 'AllPosts',
+        component: () =>
+            import ("../views/AllPosts.vue"),
+            beforeEnter: async(to, from, next) => {
+                console.log("Allposts authenitcate")
+                let authResult = await auth.authenticated();
+                if (!authResult) {
+                    next('/api/login')
+                } else {
+                    next();
+                }
+            }
+        },
+    
 ]
 
 const router = createRouter({
