@@ -4,6 +4,7 @@ import APost from "../views/APost.vue";
 import AddPost from "../views/AddPost.vue";
 import SignUp from "../views/SignUp.vue";
 import LogIn from "../views/LogIn.vue";
+import Contact from "../views/Contact.vue";
 
 import auth from "../auth";
 
@@ -60,6 +61,11 @@ const routes = [
         path: "/api/login",
         name: "LogIn",
         component: LogIn,
+    },
+    {
+        path: "/api/contact",
+        name: "contact",
+        component: Contact,
     },
 
     {
