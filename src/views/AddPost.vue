@@ -20,6 +20,7 @@ export default {
   },
   methods: {
     addPost() {
+      console.log("Add post")
     
       let date = new Date();
       let month = date.toLocaleString('default', { month: 'long' });

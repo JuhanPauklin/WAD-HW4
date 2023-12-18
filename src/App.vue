@@ -40,6 +40,17 @@ export default {
 </script>
 
 <style>
+* {
+    font-family: sans-serif;
+    box-sizing: border-box;
+    --primary-color: #8D7B68;
+    --secondary-color: #F1DEC9;
+    --teritary-color: #C8B6A6;
+    --accent-color: #A4907C;
+    --special-color: #0096FF;
+    --light-text: var(--secondary-color);
+    --dark-text: #716150;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

@@ -1,20 +1,33 @@
 <template>
-  <div class="AllPosts">
-    <div id="post-list">
-    <h1>All Posts</h1>
-     <div class="container">
-    <button   @click="Logout" class="center">Logout</button>
+  <div class="flex-container">
+
+    <div class="sides"><p>Lorem ipsum</p></div>
+
+    <div class="mid">
+      <div id="post-list">
+        <h1>All Posts</h1>
+
+          <div class="container">
+            <button   @click="Logout">Logout</button>
+          </div>
+
+        <ul>
+          <div class="item" v-for="post in posts" :key="post.id">
+              <a class= 'singlepost' :href="'/api/apost/' + post.id">
+              <span class="body"> <b>date:</b> {{ post.date }} </span> <br />
+              <span class="body"> <b>Body:</b> {{ post.body }} </span> <br />
+              </a>
+          </div>
+        </ul>
+      </div>
+
+      <div class="buttons">
+      <button onclick="location.href='/api/addpost'" type="button">Add post</button>
+      <button   @click="DeleteAll">Delete All</button>
+      </div>
     </div>
-      <ul>
-        <div class="item" v-for="post in posts" :key="post.id">
-            <a class= 'singlepost' :href="'/api/apost/' + post.id">
-            <span class="body"> <b>date:</b> {{ post.date }} </span> <br />
-            <span class="body"> <b>Body:</b> {{ post.body }} </span> <br />
-          </a>
-        </div>
-      </ul>
-    </div>
-    <button   @click="DeleteAll" class="center">Delete All</button>
+
+    <div class="sides"><p>Lorem ipsum</p></div>
   </div>
 </template>
 
@@ -80,6 +93,35 @@ export default {
 </script>
 
 <style scoped>
+.flex-container {
+display: flex;
+  width: 97%;
+
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch; 
+}
+
+.sides{
+  min-height: 100%;
+  width: 100%;
+  background-color: var(--primary-color);
+  border: 1px solid var(--accent-color);
+  border-radius: 5px;
+}
+.buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: auto;
+}
+
+.mid {
+  width: 100%;
+  border-radius: 5px;
+  height: 100%;
+}
 h1 {
   font-size: 20px;
 }
