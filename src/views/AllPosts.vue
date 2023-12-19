@@ -183,7 +183,7 @@ a:hover {
 
 .dateSpan {
   display: table;
-  margin: 0 auto;
+  width: 100%;
 }
 
 .bodySpan {
