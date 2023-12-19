@@ -4,26 +4,28 @@
 <div class="sides"><p>Lorem ipsum</p></div>
 
 <div class="mid">
+  <div class="buttons_div">
+      <button   @click="Logout" class="center">Logout</button>
+    </div>
+      
   <div id="post-list">
     <h1>All Posts</h1>
 
-      <div class="container">
-        <button   @click="Logout">Logout</button>
-      </div>
+
 
     <ul>
       <div class="item" v-for="post in posts" :key="post.id">
           <a class= 'singlepost' :href="'/api/apost/' + post.id">
-          <span class="body"> <b>date:</b> {{ post.date }} </span> <br />
-          <span class="body"> <b>Body:</b> {{ post.body }} </span> <br />
+          <span class="dateSpan"> <b>Date:</b> {{ post.date }} </span> <br />
+          <span class="bodySpan"> <b>Body:</b> {{ post.body }} </span> <br />
           </a>
       </div>
     </ul>
   </div>
 
   <div class="buttons_div">
-  <button onclick="location.href='/api/addpost'" type="button" class="AllPostsButton">Add post</button>
-  <button   @click="DeleteAll">Delete All</button>
+  <button class="center" onclick="location.href='/api/addpost'" type="button">Add post</button>
+  <button class="center"  @click="DeleteAll">Delete All</button>
   </div>
 </div>
 <div class="sides"><p>Lorem ipsum</p></div>
@@ -112,9 +114,14 @@ display: flex;
   flex-wrap: wrap;
   justify-content: center;
   height: auto;
+  width: 50%;
 }
 .mid {
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 200%;
   border-radius: 5px;
   height: 100%;
   min-height: 100%;
@@ -132,10 +139,17 @@ a:hover {
   text-decoration: underline;
 }
 .item {
-  background: rgb(189, 212, 199);
-  margin-bottom: 5px;
-  padding: 3px 5px;
+  background: var(--teritary-color);
+  margin-bottom: 20px;
+  padding: 35px 35px;
   border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+.item:hover {
+  transform: scale(1.03);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.8);
 }
 #post-list {
   background-color: var(--primary-color);
@@ -144,7 +158,7 @@ a:hover {
   margin-bottom: 30px;
   padding: 10px 20px;
   margin: auto;
-  width: 50%;
+  width: 75%;
   border-radius: 20px;
 }
 #post-list ul {
@@ -156,5 +170,28 @@ a:hover {
   margin-top: 10px;
   padding: 20px;
   background: rgba(255, 255, 255, 0.7);
+}
+
+.center {
+  margin: auto;
+  border: 0;
+  padding: 10px 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 30%; 
+}
+
+.dateSpan {
+  display: table;
+  margin: 0 auto;
+}
+
+.bodySpan {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.singlepost {
+  text-align: right;
 }
 </style>
