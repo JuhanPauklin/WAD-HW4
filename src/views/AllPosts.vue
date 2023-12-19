@@ -16,7 +16,7 @@
     <ul>
       <div class="item" v-for="post in posts" :key="post.id">
           <a class= 'singlepost' :href="'/api/apost/' + post.id">
-          <span class="dateSpan"> <b>Date:</b> {{ post.date }} </span> <br />
+          <span class="dateSpan"> {{ post.date }} </span> <br />
           <span class="bodySpan"> <b>Body:</b> {{ post.body }} </span> <br />
           </a>
       </div>
