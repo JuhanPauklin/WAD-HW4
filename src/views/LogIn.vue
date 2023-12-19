@@ -1,12 +1,17 @@
 <template>
   <div class="form">
     <h3>LogIn</h3>
-    <label for="email">Email</label>
-    <input type="email" name="email"  required v-model="email">
-    <label for="password">Password</label>
-    <input type="password" name="password" required v-model="password">
+    <div class="container">
+      <label for="email">Email</label>
+      <input type="email" name="email"  required v-model="email">
+    </div>
+    <div class="container">
+      <label for="password">Password</label>
+      <input type="password" name="password" required v-model="password">
+    </div>
     <div class="container">
       <button @click="LogIn"  class="center">LogIn</button>
+      <p>Or</p>
       <button @click='this.$router.push("/api/signup")' class="center">Signup</button>
     </div>
   </div>
@@ -55,7 +60,7 @@ LogIn() {
   margin: 30px auto;
   background: var(--primary-color);
   text-align: left;
-  padding: 40px;
+  padding: 30px;
   border-radius: 10px;
 }
 h3 {
@@ -65,11 +70,13 @@ h3 {
 label {
   color: var(--secondary-color);
   display: inline-block;
-  margin: 25px 0 15px;
+  margin: auto 35px auto 15px;
   font-size: 0.8em;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: bold;
+  width: 150px;
+  text-align: right;
 }
 input {
   display: block;
@@ -79,6 +86,7 @@ input {
   border: none;
   border-bottom: 1px solid white;
   color: blue;
+  border-radius: 10px;
 }
 button {
   background: var(--button-color);
@@ -100,5 +108,10 @@ button {
 .container {
   display: flex;
   justify-content: center;
+  margin-top: 10px;
+}
+
+p {
+  margin-top: 27px;
 }
 </style>

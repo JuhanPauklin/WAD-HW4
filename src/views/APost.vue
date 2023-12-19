@@ -105,18 +105,13 @@ input {
   border-radius: 10px;
 }
 button {
-  background: rgb(8, 110, 110);
+  background: var(--button-color);
   border: 0;
   padding: 10px 20px;
   margin-top: 20px;
   color: white;
   border-radius: 20px;
 }
-.container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 10px;
-}
+
 
 </style>

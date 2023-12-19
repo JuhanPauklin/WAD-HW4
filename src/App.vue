@@ -61,6 +61,14 @@ export default {
   color: var(--secondary-color);
 }
 
+body {
+  background-color: var(--secondary-color);
+}
+
+input {
+  background-color: var(--secondary-color);
+}
+
 nav {
   padding: 30px;
 }
@@ -87,6 +95,8 @@ button{
 }
 .container {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
 }
 </style>
