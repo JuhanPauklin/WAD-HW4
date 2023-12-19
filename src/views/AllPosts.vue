@@ -21,7 +21,7 @@
     </ul>
   </div>
 
-  <div class="buttons">
+  <div class="buttons_div">
   <button onclick="location.href='/api/addpost'" type="button" class="AllPostsButton">Add post</button>
   <button   @click="DeleteAll">Delete All</button>
   </div>
@@ -94,7 +94,7 @@ export default {
 <style scoped>
 .flex-container {
 display: flex;
-  width: 97%;
+  width: 100%;
   flex-direction: row;
   justify-content: space-between;
   align-items: stretch; 
@@ -106,7 +106,7 @@ display: flex;
   border: 1px solid var(--accent-color);
   border-radius: 5px;
 }
-.buttons {
+.buttons_div {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
