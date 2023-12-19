@@ -2,10 +2,7 @@
   <div>
 
     <nav>
-      <router-link to="/api/allposts">Posts</router-link> |
-      <router-link to="/api/addpost">Add a Post</router-link> |
-      <router-link to="/api/signup">SignUp</router-link>|
-      <router-link to="/api/login">Login</router-link>|
+      <router-link to="/api/allposts">Home</router-link> |
       <router-link to="/api/contact">Contact us</router-link>
     </nav>
     <router-view />
@@ -62,6 +59,7 @@ export default {
 }
 
 body {
+  margin: 0px;
   background-color: var(--secondary-color);
 }
 
@@ -70,12 +68,25 @@ input {
 }
 
 nav {
+  margin-bottom: 50px;
   padding: 30px;
+  background-color: var(--primary-color);
+  width: 100%;
 }
 
 nav a {
   font-weight: bold;
-  color: #2c3e50;
+  font-size: 20px;
+  color: var(--teritary-color);
+  transition: background-color 0.2s ease, color 0.2s ease;
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+nav a:hover {
+  background-color: var(--accent-color);
+  color: var(--light-text);
 }
 
 nav a.router-link-exact-active {
@@ -92,6 +103,19 @@ button{
   display: block;
   padding: 10px 16px;
   letter-spacing: 2px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.7);
+}
+.form {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.form:hover {
+  transform: scale(1.03);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.8);
 }
 .container {
   display: flex;
