@@ -25,7 +25,7 @@
   color: var(--secondary-color);
   max-width: 400px;
   margin: auto;
-  padding: 20px 30px 50px 30px;
+  padding: 20px 30px 40px 30px;
   border-radius: 10px;
 }
 </style>
