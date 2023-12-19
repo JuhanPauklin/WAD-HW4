@@ -22,7 +22,7 @@
       </div>
 
       <div class="buttons">
-      <button onclick="location.href='/api/addpost'" type="button">Add post</button>
+      <button onclick="location.href='/api/addpost'" type="button" class="AllPostsButton">Add post</button>
       <button   @click="DeleteAll">Delete All</button>
       </div>
     </div>
@@ -121,6 +121,11 @@ display: flex;
   width: 100%;
   border-radius: 5px;
   height: 100%;
+  min-height: 100%;
+}
+
+.allPostsButton {
+  margin: auto;
 }
 h1 {
   font-size: 20px;
@@ -138,7 +143,8 @@ a:hover {
   border-radius: 10px;
 }
 #post-list {
-  background: #6e8b97;
+  background-color: var(--primary-color);
+  border: 1px solid var(--accent-color);
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
   margin-bottom: 30px;
   padding: 10px 20px;
