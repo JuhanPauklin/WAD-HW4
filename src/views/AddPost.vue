@@ -60,7 +60,7 @@ export default {
   margin: 30px auto;
   background: var(--primary-color);
   text-align: left;
-  padding: 40px;
+  padding: 30px;
   border-radius: 10px;
 }
 .post-body {
@@ -76,7 +76,7 @@ h3 {
 label {
   color: var(--secondary-color);
   display: inline-block;
-  margin: 25px 0 15px;
+  margin: auto 35px auto 15px;
   font-size: 0.8em;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -90,6 +90,7 @@ input {
   border: none;
   border-bottom: 1px solid white;
   color: blue;
+  border-radius: 10px;
 }
 button {
   background: var(--button-color);
@@ -100,5 +101,6 @@ button {
   border-radius: 20px;
   align-items: center;
   text-align: center;
+  margin-left: 28%;
 }
 </style>
