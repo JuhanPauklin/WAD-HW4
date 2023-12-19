@@ -51,7 +51,7 @@ export default {
     --light-text: var(--secondary-color);
     --dark-text: #716150;
     --button-color: #0096FF;
-    --button-text: #000000;
+    --button-text: #ffffff;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

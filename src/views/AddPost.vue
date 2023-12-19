@@ -91,7 +91,7 @@ button {
   border: 0;
   padding: 10px 20px;
   margin-top: 20px;
-  color: white;
+  color: var(--button-text);
   border-radius: 20px;
   align-items: center;
   text-align: center;

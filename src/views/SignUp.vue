@@ -92,15 +92,17 @@ input {
   border-bottom: 1px solid white;
   color: blue;
 }
-button {
+button{
+  margin-top: 30px;
+  border-radius: 36px;
   background: var(--button-color);
-  border: 0;
-  padding: 10px 20px;
-  margin-top: 20px;
   color: var(--button-text);
-  border-radius: 20px;
-  align-items: center;
-  text-align: center;
+  border:0;
+  font-weight: 700;
+  font-size: 0.8em;
+  display: block;
+  padding: 10px 16px;
+  letter-spacing: 2px;
 }
 div {
   padding: 10px 20px;

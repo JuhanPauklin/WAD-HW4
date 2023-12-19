@@ -93,7 +93,7 @@ button {
   border: 0;
   padding: 10px 20px;
   margin: 20px 20px 20px 20px;
-  color: white;
+  color: var(--button-text);
   border-radius: 20px;
   align-items: center;
   text-align: center;
@@ -104,11 +104,6 @@ button {
   padding: 10px 20px;
   margin-top: 20px;
   width: 30%; 
-}
-.container {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
 }
 
 p {
