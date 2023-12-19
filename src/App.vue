@@ -99,6 +99,13 @@ button:hover {
   transform: scale(1.05);
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.7);
 }
+.form {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.form:hover {
+  transform: scale(1.03);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.8);
+}
 .container {
   display: flex;
   flex-direction: row;
