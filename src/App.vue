@@ -40,6 +40,17 @@ export default {
 </script>
 
 <style>
+* {
+    font-family: sans-serif;
+    box-sizing: border-box;
+    --primary-color: rgb(167, 154, 154);
+    --secondary-color: #F1DEC9;
+    --teritary-color: #C8B6A6;
+    --accent-color: #A4907C;
+    --special-color: #0096FF;
+    --light-text: var(--secondary-color);
+    --dark-text: #716150;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -63,7 +74,7 @@ nav a.router-link-exact-active {
 button{
   margin-top: 30px;
   border-radius: 36px;
-  background: #FEE996;
+  background: rgb(8, 110, 110);
   border:0;
   font-weight: 700;
   font-size: 0.8em;
