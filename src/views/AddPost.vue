@@ -1,8 +1,10 @@
 <template>
   <div class="form">
     <h3>Add a Post</h3>
-    <label for="body">Body: </label>
-    <input name="body" type="text" id="body" required v-model="post.body" />
+    <div class="post-body">
+      <label for="body">Body</label>
+      <input name="body" type="text" id="body" required v-model="post.body" />
+    </div>
     <button @click="addPost" class="addPost">Add Post</button>
   </div>
 </template>
@@ -60,6 +62,12 @@ export default {
   text-align: left;
   padding: 40px;
   border-radius: 10px;
+}
+.post-body {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
 }
 h3 {
   text-align: center;
