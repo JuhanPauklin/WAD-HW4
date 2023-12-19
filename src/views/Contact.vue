@@ -19,7 +19,13 @@
   </script>
 
 <style>
-.about p {
-  color: var(--dark-text);
+
+.about {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  max-width: 400px;
+  margin: auto;
+  padding: 20px 30px 50px 30px;
+  border-radius: 10px;
 }
 </style>
