@@ -1,10 +1,14 @@
 <template>
   <div class="form">
     <h3>SignUp</h3>
-    <label for="email">Email</label>
-    <input type="email" name="email"  required v-model="email">
-    <label for="password">Password</label>
-    <input type="password" name="password" required v-model="password">
+    <div class="container">
+      <label for="email">Email</label>
+      <input type="email" name="email"  required v-model="email">
+    </div>
+    <div class="container">
+      <label for="password">Password</label>
+      <input type="password" name="password" required v-model="password">
+    </div>
     <div v-if="errMsg">{{errMsg}} </div>
     <button @click="SignUp" class="SignUp">SignUp</button>
   </div>
@@ -67,7 +71,7 @@ SignUp() {
   margin: 30px auto;
   background: var(--primary-color);
   text-align: left;
-  padding: 40px;
+  padding: 30px;
   border-radius: 10px;
 }
 h3 {
@@ -77,11 +81,13 @@ h3 {
 label {
   color: var(--secondary-color);
   display: inline-block;
-  margin: 25px 0 15px;
+  margin: auto 35px auto 15px;
   font-size: 0.8em;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: bold;
+  width: 150px;
+  text-align: right;
 }
 input {
   display: block;
@@ -89,23 +95,17 @@ input {
   width: 100%;
   box-sizing: border-box;
   border: none;
-  border-bottom: 1px solid white;
   color: blue;
+  border-radius: 10px;
 }
-button{
-  margin-top: 30px;
-  border-radius: 36px;
-  background: var(--button-color);
-  color: var(--button-text);
-  border:0;
-  font-weight: 700;
-  font-size: 0.8em;
-  display: block;
-  padding: 10px 16px;
-  letter-spacing: 2px;
-}
-div {
-  padding: 10px 20px;
+button {
+  margin: auto;
   margin-top: 20px;
+  background: var(--button-color);
+  border: 0;
+  padding: 10px 20px;
+  color: var(--button-text);
+  border-radius: 20px;
+  text-align: center;
 }
 </style>

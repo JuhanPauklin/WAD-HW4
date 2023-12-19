@@ -84,15 +84,11 @@ input {
   width: 100%;
   box-sizing: border-box;
   border: none;
-  border-bottom: 1px solid white;
   color: blue;
   border-radius: 10px;
 }
 button {
   background: var(--button-color);
-  border: 0;
-  padding: 10px 20px;
-  margin: 20px 20px 20px 20px;
   color: var(--button-text);
   border-radius: 20px;
   align-items: center;
