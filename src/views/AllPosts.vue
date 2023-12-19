@@ -1,21 +1,33 @@
 <template>
-  <div class="AllPosts">
-    <div id="post-list">
+  <div class="flex-container">
+
+<div class="sides"><p>Lorem ipsum</p></div>
+
+<div class="mid">
+  <div id="post-list">
     <h1>All Posts</h1>
-     <div class="container">
-    <button   @click="Logout" class="center">Logout</button>
-    </div>
-      <ul>
-        <div class="item" v-for="post in posts" :key="post.id">
-            <a class= 'singlepost' :href="'/api/apost/' + post.id">
-            <span class="body"> <b>date:</b> {{ post.date }} </span> <br />
-            <span class="body"> <b>Body:</b> {{ post.body }} </span> <br />
+
+      <div class="container">
+        <button   @click="Logout">Logout</button>
+      </div>
+
+    <ul>
+      <div class="item" v-for="post in posts" :key="post.id">
+          <a class= 'singlepost' :href="'/api/apost/' + post.id">
+          <span class="body"> <b>date:</b> {{ post.date }} </span> <br />
+          <span class="body"> <b>Body:</b> {{ post.body }} </span> <br />
           </a>
-        </div>
-      </ul>
-    </div>
-    <button   @click="DeleteAll" class="center">Delete All</button>
+      </div>
+    </ul>
   </div>
+
+  <div class="buttons_div">
+  <button onclick="location.href='/api/addpost'" type="button" class="AllPostsButton">Add post</button>
+  <button   @click="DeleteAll">Delete All</button>
+  </div>
+</div>
+<div class="sides"><p>Lorem ipsum</p></div>
+</div>
 </template>
 
 
@@ -80,6 +92,36 @@ export default {
 </script>
 
 <style scoped>
+.flex-container {
+display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch; 
+}
+.sides{
+  min-height: 100%;
+  width: 100%;
+  background-color: var(--primary-color);
+  border: 1px solid var(--accent-color);
+  border-radius: 5px;
+}
+.buttons_div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: auto;
+}
+.mid {
+  width: 100%;
+  border-radius: 5px;
+  height: 100%;
+  min-height: 100%;
+}
+.allPostsButton {
+  margin: auto;
+}
 h1 {
   font-size: 20px;
 }
@@ -96,7 +138,8 @@ a:hover {
   border-radius: 10px;
 }
 #post-list {
-  background: #6e8b97;
+  background-color: var(--primary-color);
+  border: 1px solid var(--accent-color);
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
   margin-bottom: 30px;
   padding: 10px 20px;

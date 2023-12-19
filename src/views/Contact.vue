@@ -17,3 +17,9 @@
   }
   }
   </script>
+
+<style>
+.about p {
+  color: var(--dark-text);
+}
+</style>

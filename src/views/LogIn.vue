@@ -53,17 +53,17 @@ LogIn() {
 .form {
   max-width: 420px;
   margin: 30px auto;
-  background: rgb(167, 154, 154);
+  background: var(--primary-color);
   text-align: left;
   padding: 40px;
   border-radius: 10px;
 }
 h3 {
   text-align: center;
-  color: rgb(8, 110, 110);
+  color: var(--secondary-color);
 }
 label {
-  color: rgb(8, 110, 110);
+  color: var(--secondary-color);
   display: inline-block;
   margin: 25px 0 15px;
   font-size: 0.8em;
@@ -81,7 +81,7 @@ input {
   color: blue;
 }
 button {
-  background: rgb(8, 110, 110);
+  background: var(--button-color);
   border: 0;
   padding: 10px 20px;
   margin: 20px 20px 20px 20px;
