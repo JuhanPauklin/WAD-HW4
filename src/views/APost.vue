@@ -2,12 +2,14 @@
   <div class="A Post">
     <div id="form">
       <h3>A Post</h3>
-      <label for="body">Body: </label>
-      <input name="body" type="text" id="body" required v-model="post.body" />
       <div class="container">
-      <button @click="updatePost" class="updatePost">Update Post</button>
-      <button @click="deletePost" class="deletePost">Delete Post</button>
-    </div>
+        <label for="body">Body</label>
+        <input name="body" type="text" id="body" required v-model="post.body" />
+      </div>
+      <div class="container">
+        <button @click="updatePost" class="updatePost">Update Post</button>
+        <button @click="deletePost" class="deletePost">Delete Post</button>
+      </div>
     </div>
   </div>
 </template>
@@ -73,19 +75,20 @@ export default {
 #form {
   max-width: 420px;
   margin: 30px auto;
-  background: rgb(167, 154, 154);
+  background: var(--primary-color);
   text-align: left;
-  padding: 40px;
+  padding: 30px;
   border-radius: 10px;
 }
+
 h3 {
   text-align: center;
-  color: rgb(8, 110, 110);
+  color: var(--secondary-color);
 }
 label {
-  color: rgb(8, 110, 110);
+  color: var(--secondary-color);
   display: inline-block;
-  margin: 25px 0 15px;
+  margin: auto 35px auto 15px;
   font-size: 0.8em;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -99,6 +102,7 @@ input {
   border: none;
   border-bottom: 1px solid white;
   color: blue;
+  border-radius: 10px;
 }
 button {
   background: rgb(8, 110, 110);
@@ -110,6 +114,9 @@ button {
 }
 .container {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
 }
+
 </style>
